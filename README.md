@@ -36,21 +36,18 @@ Para utilizar este programa, necesitas tener el **Java Development Kit (JDK)** i
 ### Interacción
 
 Al iniciar, el menú principal permite:
-
+```
 1. Añadir falta/retraso/justificar
 2. Buscar incidencia
 3. Borrar una falta
-
+```
 Ejemplo de menú que se muestra en consola:
+```
 Que quieres hacer ahora?
 Falta/Retraso/Justificar
-
 Buscar
-
 Borrar una falta
-
-text
-
+```
 La función de borrado primero solicita el día y muestra posibles candidatos, luego pide asignatura y nombre para identificar la entrada a eliminar.
 
 ---
