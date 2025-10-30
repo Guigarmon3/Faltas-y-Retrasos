@@ -1,39 +1,58 @@
-# Gestión de Faltas y Retrasos - Proyecto Java
+# 🗓️ Gestión de Faltas y Retrasos
 
-Ejercicio en Java que simula la gestión de faltas y retrasos para alumnos, similar al menú de Ítaca.
+Una sencilla aplicación de consola desarrollada en Java para el seguimiento de faltas y retrasos en alumnos. Este sistema simula un registro similar al menú de Ítaca utilizado en centros educativos, permitiendo añadir, buscar y eliminar incidencias de una forma práctica.
 
-¿Qué hace este programa?
-- Permite añadir, eliminar, justificar faltas y retrasos de alumnos.
-- Muestra las incidencias en una tabla con los campos: Día, Asignatura, Nombre y Tipo.
-- Incluye un menú interactivo para seleccionar acciones en consola.
+Este proyecto está escrito en Java y es ideal para practicar lógica y el manejo de arrays bidimensionales.
 
-Estructura del código:
-- La información se guarda en una matriz de Strings, cada línea es una incidencia.
-- Cabecera de la tabla:
-| Dia | Asignatura | Nombre | Tipo de falta |
-- El menú principal permite:
-  - Añadir falta/retraso/justificar
-  - Buscar incidencias por campo
-  - Borrar una falta/retraso seleccionando día y alumno
+## 🚀 Funcionalidades
 
-Ejemplo de uso:
-------------------------
-Que quieres hacer ahora?
-------------------------
-1. Falta/Retraso/Justificar
-2. Buscar
+Al ejecutar el método `main`, el programa ofrece un menú interactivo que permite:
+
+* **Añadir faltas o retrasos:** Ingresa el día, asignatura, nombre del alumno y el tipo de falta (Falta, Retraso, Justificada).
+* **Buscar incidencias:** Permite buscar por cualquiera de los campos de la tabla (día, asignatura, nombre o tipo).
+* **Eliminar faltas o retrasos:** Selecciona el día y el alumnado para borrar todas las entradas asociadas.
+* **Visualización tabular en consola:** Muestra todas las incidencias guardadas en formato tabla.
+
+## 🛠️ Tecnología
+
+* **Lenguaje:** Java
+* **Entorno:** Aplicación de consola
+* **Estructura de datos:** Array bidimensional (`String[][]`) para almacenar incidencias
+
+## ⚙️ Uso
+
+Para utilizar este programa, necesitas tener el **Java Development Kit (JDK)** instalado.
+
+1. **Compilar el archivo:**
+    ```
+    javac Main.java
+    ```
+
+2. **Ejecutar la aplicación:**
+    ```
+    java Main
+    ```
+
+### Interacción
+
+Al iniciar, el menú principal permite:
+
+1. Añadir falta/retraso/justificar
+2. Buscar incidencia
 3. Borrar una falta
 
-Cómo funciona la lógica de borrado:
-- Primero se pide el día.
-- Se muestran los posibles candidatos que coincidan con ese día.
-- El usuario introduce asignatura y nombre para identificar la incidencia a borrar.
-- Si se encuentra, todos los datos de esa línea se eliminan.
+Ejemplo de menú que se muestra en consola:
+Que quieres hacer ahora?
+Falta/Retraso/Justificar
 
-El código se puede ver en Main.java. Las funciones principales son:
-- AddFalta: añade la incidencia.
-- borrar: elimina la incidencia seleccionada.
-- buscar: permite buscar por cualquier campo.
-- show: muestra toda la tabla.
+Buscar
+
+Borrar una falta
+
+text
+
+La función de borrado primero solicita el día y muestra posibles candidatos, luego pide asignatura y nombre para identificar la entrada a eliminar.
+
+---
 
 Autor: Guillermo García (Guigarmon3), estudiante de IES La Vereda, Valencia.
