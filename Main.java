@@ -40,7 +40,8 @@ Que quieres hacer ahora?
 ------------------------
 1. Falta/Retraso/Justificar
 2. Buscar
-3. Borrar una falta""");
+3. Borrar una falta
+4. Mostrar faltas de un alumnos""");
         int r = sc.nextInt();
         if (r == 1) {
             AddFalta(lista);
@@ -48,7 +49,73 @@ Que quieres hacer ahora?
             buscar(lista);
         } else if (r == 3) {
             borrar(lista);
+        } else if (r == 4) {
+            Mostrar(lista);
+        } else {
+            show(lista);
         }
+    }
+    public static void Mostrar(String[][] lista) {
+        Scanner sc = new Scanner(System.in);
+        // Muestra la tabla
+        for (int i=0;i<50;i++) {
+            System.out.println();
+        }
+        boolean hay = false;
+        for (int i=0;i<lista.length;i++) {
+            for (int j=0;j<lista[i].length;j++) {
+                if (j == 0) {
+                    if (lista[i][j] != null) {
+                        hay = true;
+                        System.out.print("| ");
+                    }
+                } else {
+                    if (lista[i][j] != null) {
+                        System.out.print(" ");
+                    }
+                }
+                if(lista[i][j] != null) {
+                    System.out.print(lista[i][j] + " |");
+                }
+            }
+            if (hay != false) {
+                System.out.println();
+                hay = false;
+            }
+        }
+        System.out.println();
+        //Busqueda
+        System.out.println("""
+--------------------------------------
+Nombre de el alumno que quieres buscar
+--------------------------------------""");
+        String nombre = sc.nextLine();
+        // Calcula la cantidad de Faltas
+        int totalfaltas = 0;
+        int totalretrasos = 0;
+        int totaljustificadas = 0;
+        String[] Asignaturas = new String[lista.length];
+        // Busca el nombre de cada asignatura en la cual tiene faltas
+        for (int i =0;i<lista.length;i++) {
+            if (lista[i][1] != null && lista[i][2].equals(nombre)) {
+                if(lista[i][3].equals("Falta")) {
+                    totalfaltas++;
+                } else if (lista[i][3].equals("Retraso")) {
+                    totalretrasos++;
+                } else if (lista[i][3].equals("Justificada")) {
+                    totaljustificadas++;
+                }
+            }
+        }
+        System.out.println("""
+------
+Faltas
+------""");
+        System.out.println("Total Faltas: " + totalfaltas);
+        System.out.println("Total Retrasos: " + totalretrasos);
+        System.out.println("Total Justificadas " + totaljustificadas);
+        sc.next();
+        show(lista);
     }
     public static void borrar(String[][] lista) {
         boolean hay = false;
@@ -170,7 +237,6 @@ Tipo de Falta
         }
         show(lista);
     }
-
     public static void crear(String[][] lista) {
         lista[0][0] = "Dia";
         lista[0][1] = "Asignatura";
